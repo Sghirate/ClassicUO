@@ -2516,6 +2516,11 @@ namespace ClassicUO.Network
 
         public static void Send_RazorACK(this NetClient socket)
         {
+            if (!Settings.GlobalSettings.IsRazorPacketAllowed)
+            {
+                return;
+            }
+
             const byte ID = 0xF0;
 
             int length = PacketsTable.GetPacketLength(ID);
@@ -2547,6 +2552,11 @@ namespace ClassicUO.Network
 
         public static void Send_QueryGuildPosition(this NetClient socket)
         {
+            if (!Settings.GlobalSettings.IsRazorPacketAllowed)
+            {
+                return;
+            }
+
             const byte ID = 0xF0;
 
             int length = PacketsTable.GetPacketLength(ID);
@@ -2579,6 +2589,11 @@ namespace ClassicUO.Network
 
         public static void Send_QueryPartyPosition(this NetClient socket)
         {
+            if (!Settings.GlobalSettings.IsRazorPacketAllowed)
+            {
+                return;
+            }
+
             const byte ID = 0xF0;
 
             int length = PacketsTable.GetPacketLength(ID);

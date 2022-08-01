@@ -98,6 +98,8 @@ namespace ClassicUO.Configuration
 
         [JsonProperty("encryption")] public byte Encryption { get; set; }
 
+        [JsonProperty("is_razor_packet_allowed")] public bool IsRazorPacketAllowed { get; set; } = true;
+
         [JsonProperty("plugins")] public string[] Plugins { get; set; } = { @"./Assistant/Razor.dll" };
 
         public static string GetSettingsFilepath()
